@@ -1,24 +1,37 @@
 "use client";
 
 import { useEffect } from "react";
-import { App } from "@capacitor/app";
-import { Capacitor } from "@capacitor/core";
 
 export function NativeAppBridge() {
   useEffect(() => {
-    if (!Capacitor.isNativePlatform()) return;
+    let removeListener: (() => void) | undefined;
 
-    const listener = App.addListener("backButton", ({ canGoBack }) => {
-      if (canGoBack) {
-        window.history.back();
-        return;
-      }
+    async function setupNativeBackButton() {
+      const [{ App }, { Capacitor }] = await Promise.all([
+        import("@capacitor/app"),
+        import("@capacitor/core")
+      ]);
 
-      App.exitApp();
+      if (!Capacitor.isNativePlatform()) return;
+
+      const listener = await App.addListener("backButton", ({ canGoBack }) => {
+        if (canGoBack) {
+          window.history.back();
+          return;
+        }
+
+        App.exitApp();
+      });
+
+      removeListener = () => listener.remove();
+    }
+
+    setupNativeBackButton().catch(() => {
+      // The web app should still build and run normally when Capacitor is unavailable.
     });
 
     return () => {
-      listener.then((handle) => handle.remove());
+      removeListener?.();
     };
   }, []);
 
