@@ -51,7 +51,7 @@ export function Navbar() {
       </div>
       {open ? (
         <nav id="mobile-navigation" className="border-t border-navy-900/10 bg-linen px-4 py-4 lg:hidden">
-          <div className="mx-auto grid max-w-7xl gap-2 text-sm font-bold text-navy-900/78">
+          <div className="mx-auto grid max-w-7xl gap-2 text-sm font-bold text-navy-900/80">
             {links.map((link) => (
               <Link
                 key={link.href}

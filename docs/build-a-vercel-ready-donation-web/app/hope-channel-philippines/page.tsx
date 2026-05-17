@@ -18,14 +18,14 @@ export default function HopeChannelPage() {
             <h1 className="mt-7 max-w-4xl font-serif text-5xl font-bold leading-[1.05] sm:text-6xl">
               Sharing Christ-centered hope through television and digital media.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80">
               Support sample giving options for programs that encourage faith, family, health, Bible study, and service.
             </p>
             <ButtonLink href="/donate" variant="custom" className="mt-9 bg-hope-gold text-hope-navy shadow-hope hover:bg-gold-400">
               Donate to Hope Channel
             </ButtonLink>
           </div>
-          <div className="rounded-[2rem] border border-white/20 bg-white/12 p-5 shadow-hope backdrop-blur">
+          <div className="rounded-[2rem] border border-white/20 bg-white/10 p-5 shadow-hope backdrop-blur">
             <div className="rounded-[1.5rem] bg-white p-6 text-hope-navy">
               <Tv className="text-hope-blue" size={42} />
               <p className="mt-6 text-sm font-black uppercase tracking-[0.18em] text-hope-blue">Media ministry</p>
@@ -59,7 +59,7 @@ function MinistryDetail({ icon, options }: { icon: ReactNode; options: string[] 
           {options.map((option) => (
             <div key={option} className="rounded-3xl border border-hope-blue/10 bg-white p-6 shadow-hope">
               <p className="text-xl font-black text-hope-navy">{option}</p>
-              <p className="mt-3 leading-7 text-hope-navy/66">A sample designation that can later map to official ministry funds and reporting.</p>
+              <p className="mt-3 leading-7 text-hope-navy/70">A sample designation that can later map to official ministry funds and reporting.</p>
             </div>
           ))}
         </div>
@@ -97,7 +97,7 @@ function HopeCta() {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-hope-gold">Hope in every home</p>
             <h2 className="mt-3 font-serif text-3xl font-bold sm:text-4xl">Support Hope Channel Philippines</h2>
-            <p className="mt-4 max-w-2xl leading-7 text-white/72">
+            <p className="mt-4 max-w-2xl leading-7 text-white/70">
               Your demo gift previews how media ministry support can be organized for future official giving.
             </p>
           </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PWARegister } from "@/components/PWARegister";
+import { NativeAppBridge } from "@/components/NativeAppBridge";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "adventist-giving-v2.vercel.app"}`),
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="font-sans antialiased">
         <PWARegister />
+        <NativeAppBridge />
         <Navbar />
         <main>{children}</main>
         <Footer />

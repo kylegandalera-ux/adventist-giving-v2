@@ -20,10 +20,27 @@ export type Donation = {
   donationType: DonationType;
   recipient: Recipient | string;
   amount: number;
+  maintenanceFee?: number;
+  totalCharge?: number;
   paymentMethod: PaymentMethod;
   message?: string;
   date: string;
   status: "Demo Pending" | "Demo Confirmed";
+};
+
+export type DonationInvoice = {
+  invoiceNumber: string;
+  issuedAt: string;
+  donorName: string;
+  email: string;
+  mobile: string;
+  donationType: DonationType | string;
+  recipient: Recipient | string;
+  donationAmount: number;
+  maintenanceFee: number;
+  totalCharge: number;
+  paymentMethod: PaymentMethod | string;
+  message?: string;
 };
 
 export type Church = {

@@ -24,7 +24,7 @@ export default function NotFound() {
             <Link
               key={link.href}
               href={link.href}
-              className="focus-ring rounded-full border border-navy-900/12 bg-white px-5 py-3 text-sm font-bold text-navy-900 hover:border-gold-500"
+              className="focus-ring rounded-full border border-navy-900/10 bg-white px-5 py-3 text-sm font-bold text-navy-900 hover:border-gold-500"
             >
               {link.label}
             </Link>

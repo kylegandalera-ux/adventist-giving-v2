@@ -16,7 +16,7 @@ export function CTASection({
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold-400">Faithful stewardship</p>
             <h2 className="mt-3 font-serif text-3xl font-bold sm:text-4xl">{title}</h2>
-            <p className="mt-4 max-w-2xl leading-7 text-white/72">{description}</p>
+            <p className="mt-4 max-w-2xl leading-7 text-white/70">{description}</p>
           </div>
           <ButtonLink href="/donate" className="w-full md:w-auto">Give Now</ButtonLink>
         </div>

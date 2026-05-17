@@ -17,7 +17,7 @@ export function RecentDonationsTable({ donations }: { donations: Donation[] }) {
           </thead>
           <tbody className="divide-y divide-navy-900/10">
             {donations.map((donation) => (
-              <tr key={donation.id} className="text-navy-900/72">
+              <tr key={donation.id} className="text-navy-900/70">
                 <td className="px-5 py-4">{donation.date}</td>
                 <td className="px-5 py-4 font-semibold text-navy-950">{donation.donorName}</td>
                 <td className="px-5 py-4">{donation.donationType}</td>

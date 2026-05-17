@@ -37,6 +37,23 @@ After deploying to Vercel, open the live URL on a phone:
 - Android Chrome: Install app or Add to Home screen.
 - Desktop Chrome/Edge: install from the address bar.
 
+## Native Mobile App Packaging
+
+This project also includes Capacitor configuration for future Android and iOS store builds.
+
+Useful commands:
+
+```bash
+npm install
+npm run mobile:add:android
+npm run mobile:add:ios
+npm run mobile:sync
+npm run mobile:android
+npm run mobile:ios
+```
+
+See `MOBILE_APP_SETUP.md` for the full step-by-step process.
+
 ## Main Pages
 
 - Home
@@ -70,6 +87,33 @@ Payment methods are represented as placeholders for future integration:
 - Over-the-Counter Deposit
 
 The current form validates sample input and shows a demo confirmation message. It does not submit to a backend.
+
+## Maintenance Fee Model
+
+The donation form includes a disclosed 2% platform maintenance fee for demo planning:
+
+- Donor enters the donation amount.
+- The form calculates the 2% maintenance fee.
+- The form shows the total demo charge.
+- The maintenance fee destination account is centralized in `lib/fees.ts`.
+
+Before using this in production, confirm official church authorization, payment gateway rules, donor disclosure wording, receipt treatment, tax/accounting treatment, and data privacy compliance. In live payments, this should be handled through approved gateway split payments, transfers, or settlement rules rather than manual handling.
+
+## Digital Invoice Demo
+
+After a valid demo donation submission, the app generates a digital donation acknowledgment with:
+
+- Invoice number
+- Donor details
+- Donation type and recipient
+- Payment method
+- Donation amount
+- 2% maintenance fee
+- Total demo charge
+- Maintenance fee destination account
+- Print / Save PDF action
+
+This is intentionally labeled as a demo acknowledgment, not an official receipt. In production, invoices or receipts should only be issued after confirmed payment settlement and according to official church/ministry accounting policy.
 
 ## Color System
 

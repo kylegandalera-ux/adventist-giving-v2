@@ -10,7 +10,7 @@ export function MinistryCard({ ministry }: { ministry: Ministry }) {
         {ministry.href ? <ArrowUpRight className="text-navy-800 transition group-hover:text-gold-500" size={20} /> : null}
       </div>
       <h2 className="mt-5 text-xl font-black text-navy-950">{ministry.name}</h2>
-      <p className="mt-3 leading-7 text-navy-900/68">{ministry.description}</p>
+      <p className="mt-3 leading-7 text-navy-900/70">{ministry.description}</p>
     </article>
   );
 

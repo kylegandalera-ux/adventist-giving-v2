@@ -2,16 +2,21 @@
 
 import { Download } from "lucide-react";
 import { dashboard } from "@/data/sample";
+import { calculateDonationBreakdown, MAINTENANCE_FEE_RATE } from "@/lib/fees";
 import { RecentDonationsTable } from "@/components/RecentDonationsTable";
 import { StatCard } from "@/components/StatCard";
 
 export function AdminDashboard() {
+  const maintenanceFees = dashboard.recentDonations.reduce((total, donation) => {
+    return total + calculateDonationBreakdown(donation.amount).maintenanceFee;
+  }, 0);
+
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div className="grid gap-5 md:grid-cols-3">
         <StatCard label="Total donations" value={`₱${dashboard.totalDonations.toLocaleString()}`} helper="Sample data only" />
         <StatCard label="Number of donors" value={dashboard.donorCount.toString()} helper="Demo donor count" />
-        <StatCard label="Pending integration" value="0 live payments" helper="Gateways are placeholders" />
+        <StatCard label="Maintenance fees" value={`₱${maintenanceFees.toLocaleString()}`} helper={`${(MAINTENANCE_FEE_RATE * 100).toFixed(0)}% shown on recent demo gifts`} />
       </div>
 
       <div className="mt-8 rounded-[2rem] border border-navy-900/10 bg-white p-5 shadow-soft">

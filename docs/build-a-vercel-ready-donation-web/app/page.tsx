@@ -68,7 +68,7 @@ export default function HomePage() {
               <article key={card.title} className="rounded-3xl border border-navy-900/10 bg-white p-6 shadow-soft">
                 <card.icon className="text-gold-500" size={30} aria-hidden="true" />
                 <h3 className="mt-5 text-xl font-black text-navy-950">{card.title}</h3>
-                <p className="mt-3 leading-7 text-navy-900/68">{card.text}</p>
+                <p className="mt-3 leading-7 text-navy-900/70">{card.text}</p>
               </article>
             ))}
           </div>
@@ -103,7 +103,7 @@ export default function HomePage() {
               <div key={step} className="rounded-3xl bg-white p-6 shadow-soft">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-navy-900 font-black text-gold-400">{index + 1}</span>
                 <h3 className="mt-5 text-xl font-black text-navy-950">{step}</h3>
-                <p className="mt-3 text-navy-900/68">The current flow is intentionally demo-only while leaving a clear path for official implementation.</p>
+                <p className="mt-3 text-navy-900/70">The current flow is intentionally demo-only while leaving a clear path for official implementation.</p>
               </div>
             ))}
           </div>
