@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f1e6;
+  color: #102033;
+}
+
+::selection {
+  background: #d7aa45;
+  color: #09182f;
+}
+
+.mission-shell {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(232, 199, 111, 0.32), transparent 28%),
+    linear-gradient(135deg, #09182f 0%, #14345f 46%, #f7f1e6 46%, #f7f1e6 100%);
+}
+
+.field-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500;
+}
